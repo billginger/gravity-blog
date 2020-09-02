@@ -1,6 +1,6 @@
 # Gravity Blog
 
-a blog system built on Node.js microservice and micro-frontends.
+A blog system built on Node.js microservice and micro-frontends.
 
 ## Features
 
@@ -8,9 +8,9 @@ Lite, Fast, SEO Friendly, Customizable, and Scalable.
 
 ## Apps
 
-* Sun: a GraphQL service for admin side and advanced themes.
-* Earth: a SSR service for visitor side.
-* Moon: a pure front-end SPA for admin side.
+* sun: a GraphQL service for admin side and advanced themes.
+* earth: a SSR service for visitor side.
+* moon: a pure front-end SPA for admin side.
 
 ## Themes
 
