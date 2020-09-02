@@ -1,0 +1,10 @@
+{
+  "name": "gravity-blog-earth",
+  "version": "0.0.1",
+  "description": "A SSR service for visitor side",
+  "author": "Bill",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
