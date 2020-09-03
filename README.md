@@ -26,6 +26,28 @@ Use SPA to change DOM structure, and use GraphQL to fetch data.
 
 The example is a theme using React and React-Bootstrap.
 
+## How to use
+
+* Create `config.ts` file based on the following sample files:
+
+```
+apps/earth/src/config.example.ts
+```
+
+* Compile the source files:
+
+```
+cd earth
+npm run build
+```
+
+* Run the application:
+
+```
+cd earth
+npm start
+```
+
 ## Development Plan
 
 ### v0.0.1 (processing)
