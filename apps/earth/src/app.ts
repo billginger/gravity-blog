@@ -1,9 +1,19 @@
-import express from "express";
-import path from "path";
+import express from 'express';
+import path from 'path';
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+// Static files path
+const staticPath = path.join(__dirname, '../static');
+
+// View files path
+const viewPath = path.join(__dirname, '../views');
+
+// View engine setup
+app.set('views', viewPath);
+app.set('view engine', 'ejs');
+
+app.use(express.static(staticPath));
 
 app.get('/', (req, res) => res.send('Hello Gravity Blog!'));
 
