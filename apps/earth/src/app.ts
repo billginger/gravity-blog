@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import config from './config';
 
 const app = express();
 
@@ -17,4 +18,5 @@ app.use(express.static(staticPath));
 
 app.get('/', (req, res) => res.send('Hello Gravity Blog!'));
 
-app.listen(3000, () => console.log('App is running at http://localhost:3000'));
+const listenLog = `App is running at http://localhost:${config.port}`;
+app.listen(config.port, () => console.log(listenLog));
