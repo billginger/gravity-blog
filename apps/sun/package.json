@@ -1,0 +1,21 @@
+{
+  "name": "gravity-blog-sun",
+  "version": "0.0.1",
+  "description": "A GraphQL service for admin side and advanced themes",
+  "author": "Bill",
+  "license": "MIT",
+  "scripts": {
+    "tsc": "node_modules/.bin/tsc",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apollo-server": "^2.19.0",
+    "graphql": "^15.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
