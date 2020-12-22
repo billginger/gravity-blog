@@ -8,14 +8,17 @@
     "tsc": "node_modules/.bin/tsc",
     "build": "tsc",
     "watch": "tsc -w",
+    "setup": "node dist/setup.js",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "apollo-server": "^2.19.0",
-    "graphql": "^15.4.0"
+    "graphql": "^15.4.0",
+    "mongoose": "^5.11.8"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.10.3",
     "typescript": "^4.0.2"
   }
 }
