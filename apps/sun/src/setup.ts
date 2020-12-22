@@ -11,10 +11,14 @@ db.once('open', () => console.log('MongoDB connection succeeded!'));
 // Page documents
 const pages = [
   {
-    url: '/'
+    url: '/',
+    title: 'Home Page',
+    content: 'Welcome to Home Page'
   },
   {
-    url: '/about'
+    url: '/about',
+    title: 'About Page',
+    content: 'Welcome to About Page'
   }
 ];
 

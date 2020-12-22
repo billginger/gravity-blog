@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 
 const pageSchema = new mongoose.Schema({
-  url: String
+  url: String,
+  title: String,
+  content: String
 });
 
 const Page = mongoose.model('Page', pageSchema);
