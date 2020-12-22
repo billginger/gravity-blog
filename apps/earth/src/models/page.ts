@@ -1,9 +1,17 @@
 import mongoose from 'mongoose';
 
+type PageType = {
+  url: string;
+  title: string;
+  content: string;
+};
+
 const pageSchema = new mongoose.Schema({
-  url: String
+  url: String,
+  title: String,
+  content: String
 });
 
 const Page = mongoose.model('Page', pageSchema);
 
-export default Page;
+export { PageType, Page };
