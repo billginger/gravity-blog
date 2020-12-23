@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import config from './config';
-import Page from './models/page';
+import { Page } from './models/page';
 
 // Connect to MongoDB
 mongoose.connect(config.mongodb_uri, { useNewUrlParser: true, useUnifiedTopology: true });

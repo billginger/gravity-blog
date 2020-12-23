@@ -1,5 +1,11 @@
 import mongoose from 'mongoose';
 
+type PageType = {
+  url: string;
+  title: string;
+  content: string;
+};
+
 const pageSchema = new mongoose.Schema({
   url: String,
   title: String,
@@ -8,4 +14,4 @@ const pageSchema = new mongoose.Schema({
 
 const Page = mongoose.model('Page', pageSchema);
 
-export default Page;
+export { PageType, Page };
