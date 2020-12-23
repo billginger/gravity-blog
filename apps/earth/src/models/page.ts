@@ -10,6 +10,9 @@ const pageSchema = new mongoose.Schema({
   url: String,
   title: String,
   content: String
+}, {
+  versionKey: false,
+  timestamps: true
 });
 
 const Page = mongoose.model('Page', pageSchema);
