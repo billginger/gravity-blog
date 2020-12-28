@@ -1,28 +1,29 @@
-import { UserType } from './models/user';
-
-const users = [
-  {
-    name: 'Bill',
-    password: '123456'
-  }, {
-    name: 'Ruby',
-    password: '654321'
-  }
-];
+import { ValidationError } from 'apollo-server';
+import { encryptPwd } from './utils/encrypt';
+import { UserType, User } from './models/user';
+import { Setting } from './models/setting';
 
 const resolvers = {
   Query: {
-    users: () => users
+    users: async () => {
+      const users = await User.find({});
+      return users;
+    }
   },
   Mutation: {
     login: async (_: null, args: UserType) => {
-      const user = users.find(value => value.name == args.name);
+      const user = await User.findOne({ name: args.name });
       if (!user) {
-        throw new Error('No such user found');
+        throw new ValidationError('No such user found!');
       }
-      const valid = user.password == args.password;
+      const setting = await Setting.findOne({});
+      if (!setting) {
+        throw new Error('Setting data lost!');
+      }
+      const password = encryptPwd(args.password, setting.secret);
+      const valid = user.password == password;
       if (!valid) {
-        throw new Error('Invalid password');
+        throw new ValidationError('Invalid password!');
       }
       const token = 'asdfghjkl';
       return {
