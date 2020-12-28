@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-type UserType = {
+type UserType = mongoose.Document & {
   name: string;
   password: string;
   token: string;
@@ -15,6 +15,6 @@ const userSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model<UserType>('User', userSchema);
 
 export { UserType, User };
