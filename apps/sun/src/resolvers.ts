@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import { ValidationError } from 'apollo-server';
 import { encryptPwd } from './utils/encrypt';
 import { UserType, User } from './models/user';
@@ -12,7 +13,8 @@ const resolvers = {
   },
   Mutation: {
     login: async (_: null, args: UserType) => {
-      const user = await User.findOne({ name: args.name });
+      const name = new RegExp('^' + args.name.trim() + '$', 'i');
+      const user = await User.findOne({ name });
       if (!user) {
         throw new ValidationError('No such user found!');
       }
@@ -21,14 +23,15 @@ const resolvers = {
         throw new Error('Setting data lost!');
       }
       const password = encryptPwd(args.password, setting.secret);
-      const valid = user.password == password;
-      if (!valid) {
+      if (password != user.password) {
         throw new ValidationError('Invalid password!');
       }
-      const token = 'asdfghjkl';
+      const token = crypto.randomBytes(16).toString('hex');
+      user.token = token;
+      await user.save();
       return {
-        token,
-        user,
+        name: user.name,
+        token
       }
     }
   }

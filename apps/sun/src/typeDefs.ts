@@ -5,8 +5,8 @@ const typeDefs = gql`
     name: String
   }
   type LoginResponse {
+    name: String
     token: String
-    user: User
   }
   type Query {
     users: [User]
