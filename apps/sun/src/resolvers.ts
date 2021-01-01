@@ -31,8 +31,8 @@ const resolvers = {
       await user.save();
       return {
         name: user.name,
-        token
-      }
+        token,
+      };
     }
   }
 };

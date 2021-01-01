@@ -9,10 +9,10 @@ type PageType = mongoose.Document & {
 const pageSchema = new mongoose.Schema({
   url: String,
   title: String,
-  content: String
+  content: String,
 }, {
   versionKey: false,
-  timestamps: true
+  timestamps: true,
 });
 
 const Page = mongoose.model<PageType>('Page', pageSchema);

@@ -5,10 +5,10 @@ type SettingType = mongoose.Document & {
 };
 
 const settingSchema = new mongoose.Schema({
-  secret: String
+  secret: String,
 }, {
   versionKey: false,
-  timestamps: true
+  timestamps: true,
 });
 
 const Setting = mongoose.model<SettingType>('Setting', settingSchema);

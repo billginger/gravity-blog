@@ -9,10 +9,10 @@ type UserType = mongoose.Document & {
 const userSchema = new mongoose.Schema({
   name: String,
   password: String,
-  token: String
+  token: String,
 }, {
   versionKey: false,
-  timestamps: true
+  timestamps: true,
 });
 
 const User = mongoose.model<UserType>('User', userSchema);

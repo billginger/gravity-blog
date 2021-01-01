@@ -9,14 +9,14 @@ import { Page } from './models/page';
 // Setting document
 const secret = crypto.randomBytes(16).toString('hex');
 const setting = {
-  secret
+  secret,
 };
 
 // User document
 const password = encryptPwd('admin', secret);
 const user = {
   name: 'admin',
-  password
+  password,
 };
 
 // Page documents
@@ -24,13 +24,13 @@ const pages = [
   {
     url: '/',
     title: 'Home Page',
-    content: 'Welcome to Home Page'
+    content: 'Welcome to Home Page',
   },
   {
     url: '/about',
     title: 'About Page',
-    content: 'Welcome to About Page'
-  }
+    content: 'Welcome to About Page',
+  },
 ];
 
 // Connect to MongoDB
