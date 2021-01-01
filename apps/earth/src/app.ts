@@ -1,17 +1,11 @@
 import express from 'express';
 import path from 'path';
-import mongoose from 'mongoose';
 import config from './config';
 import routes from './routes';
+import './db';
 
 // Create Express server
 const app = express();
-
-// Connect to MongoDB
-mongoose.connect(config.mongodb_uri, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => console.log('MongoDB connection succeeded!'));
 
 // Static files path
 const staticPath = path.join(__dirname, '../static');
